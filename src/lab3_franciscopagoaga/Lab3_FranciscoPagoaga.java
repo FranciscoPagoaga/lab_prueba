@@ -7,6 +7,7 @@ public class Lab3_FranciscoPagoaga
 {
     public static void main(String[] args) 
     {
+        int eliminar;
         ArrayList jugadores=new ArrayList();
         ArrayList<Equipo> equipos=new ArrayList();
         Scanner l=new Scanner(System.in);
@@ -89,8 +90,82 @@ public class Lab3_FranciscoPagoaga
                             jugadores.add(new Delantero(nivel, altura, velocidad, prom_goles, nombre, apellido, edad, estado, pais, pie, 0, precio, ""));
                             break;
                     }
-                    
                     break;
+                case 2: 
+                    break;
+                case 3: 
+                    System.out.println("1. Portero");
+                    System.out.println("2. Defensa");
+                    System.out.println("3. Medio");
+                    System.out.println("4. Delantero");
+                    System.out.print("Que desea eliminar?[1-4]: ");
+                    int opeliminar=l.nextInt();
+                    while(opeliminar<1|| opeliminar>4)
+                    {
+                        System.out.print("Ingrese una opcion valida: ");
+                        opeliminar=l.nextInt();
+                    }
+                    switch (opeliminar)
+                    {
+                        case 1: 
+                            for(Object e: jugadores)
+                            {
+                                if(e instanceof Portero)
+                                {
+                                    System.out.println(equipos.indexOf(e) + ". " + ((Portero) e).getNombre());
+                                }
+                            }
+                            System.out.print("Que equipo desea eliminar?: ");
+                            eliminar=l.nextInt();
+                            equipos.remove(eliminar);
+                            break;
+                        case 2:
+                            break;
+                        case 3: 
+                            for(Object e: jugadores)
+                            {
+                                if(e instanceof Medio)
+                                {
+                                    System.out.println(equipos.indexOf(e) + ". " + ((Medio) e).getNombre());
+                                }
+                            }
+                            System.out.print("Que equipo desea eliminar?: ");
+                            eliminar=l.nextInt();
+                            equipos.remove(eliminar);
+                            break;
+                        case 4: 
+                            for(Object e: jugadores)
+                            {
+                                if(e instanceof Delantero)
+                                {
+                                    System.out.println(equipos.indexOf(e) + ". " + ((Delantero) e).getNombre());
+                                }
+                            }
+                            System.out.print("Que equipo desea eliminar?: ");
+                            eliminar=l.nextInt();
+                            equipos.remove(eliminar);
+                            break;
+                    }
+                    break;
+                case 4: 
+                    System.out.println("Ingrese el nombre de su equipo: ");
+                    String nombre_equip=l.nextLine();
+                    System.out.println("Ingrese los palmar de el equipo: ");
+                    String palmares=l.nextLine();
+                    System.out.println("Ingrese el nombre de la ciudad: ");
+                    String ciudad=l.nextLine();
+                    System.out.println("Ingrese el presupuesto de su equipo: ");
+                    double presup=l.nextInt();
+                    equipos.add(new Equipo(nombre_equip,palmares,ciudad,presup));
+                case 5: 
+                    for(Equipo e: equipos)
+                    {
+                        System.out.println(equipos.indexOf(e) + ". " + e.getNombre());
+                    }
+                    System.out.print("Que equipo desea eliminar?: ");
+                    eliminar=l.nextInt();
+                    equipos.remove(eliminar);
+                case 6: 
             }
         }
     }
