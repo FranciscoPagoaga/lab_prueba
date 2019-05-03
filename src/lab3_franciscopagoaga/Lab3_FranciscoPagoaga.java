@@ -68,6 +68,15 @@ public class Lab3_FranciscoPagoaga
                             jugadores.add(new Portero(nivel_aereo, nivel_pies, nombre, apellido, edad, estado, pais, pie, 0, precio, ""));
                             break;
                         case 2:
+                            System.out.print("Ingrese nivel de agresividad: ");
+                            int nivel_agresividad=l.nextInt();
+                            System.out.print("Ingrese altura: ");
+                            double altur=l.nextDouble();
+                            System.out.print("Ingrese peso: ");
+                            double peso=l.nextDouble();
+                            System.out.print("Ingrese velocidad: ");
+                            String velocida=l.next();
+                            jugadores.add(new Defensa(nivel_agresividad, altur, peso, velocida, nombre, apellido, edad, estado, pais, pie, 0, precio, ""));
                             break;
                         case 3: 
                             System.out.println("Ingrese nivel de creatividad: ");
@@ -112,38 +121,48 @@ public class Lab3_FranciscoPagoaga
                             {
                                 if(e instanceof Portero)
                                 {
-                                    System.out.println(equipos.indexOf(e) + ". " + ((Portero) e).getNombre());
+                                    System.out.println(jugadores.indexOf(e) + ". " + ((Portero) e).getNombre());
                                 }
                             }
                             System.out.print("Que equipo desea eliminar?: ");
                             eliminar=l.nextInt();
-                            equipos.remove(eliminar);
+                            jugadores.remove(eliminar);
                             break;
                         case 2:
+                            for(Object e: jugadores)
+                            {
+                                if(e instanceof Defensa)
+                                {
+                                    System.out.println("" + jugadores.indexOf(e) + ". " + ((Defensa) e).getNombre());
+                                }
+                            }
+                            System.out.print("Que equipo desea eliminar?: ");
+                            eliminar=l.nextInt();
+                            jugadores.remove(eliminar);
                             break;
                         case 3: 
                             for(Object e: jugadores)
                             {
                                 if(e instanceof Medio)
                                 {
-                                    System.out.println(equipos.indexOf(e) + ". " + ((Medio) e).getNombre());
+                                    System.out.println(jugadores.indexOf(e) + ". " + ((Medio) e).getNombre());
                                 }
                             }
                             System.out.print("Que equipo desea eliminar?: ");
                             eliminar=l.nextInt();
-                            equipos.remove(eliminar);
+                            jugadores.remove(eliminar);
                             break;
                         case 4: 
                             for(Object e: jugadores)
                             {
                                 if(e instanceof Delantero)
                                 {
-                                    System.out.println(equipos.indexOf(e) + ". " + ((Delantero) e).getNombre());
+                                    System.out.println(jugadores.indexOf(e) + ". " + ((Delantero) e).getNombre());
                                 }
                             }
                             System.out.print("Que equipo desea eliminar?: ");
                             eliminar=l.nextInt();
-                            equipos.remove(eliminar);
+                            jugadores.remove(eliminar);
                             break;
                     }
                     break;
@@ -166,6 +185,23 @@ public class Lab3_FranciscoPagoaga
                     eliminar=l.nextInt();
                     equipos.remove(eliminar);
                 case 6: 
+            }
+            System.out.println("1. Agregar jugador");
+            System.out.println("2. Editar jugador");
+            System.out.println("3. Eliminar jugador");
+            System.out.println("4. Agregar equipo");
+            System.out.println("5. Eliminar equipo");
+            System.out.println("6. Compras");
+            System.out.println("7. Organizar equipos");
+            System.out.println("8. Listar equipos");
+            System.out.println("9. Listar jugadores");
+            System.out.println("10. Salir");
+            System.out.print("Que desea hacer? [1-10]: ");
+            opc=l.nextInt();
+            while (opc<0|| opc>10)
+            {
+                System.out.print("Ingrese una opcion valida: ");
+                opc=l.nextInt();
             }
         }
     }
