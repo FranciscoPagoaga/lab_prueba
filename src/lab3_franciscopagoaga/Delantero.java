@@ -54,5 +54,12 @@ public class Delantero extends Jugador {
     public void setProm_goles(double prom_goles) {
         this.prom_goles = prom_goles;
     }
+
+    @Override
+    public String toString() {
+        return "Delantero{" + "nivel=" + nivel + ", altura=" + altura + ", velocidad=" + velocidad + ", prom_goles=" + prom_goles + '}';
+    }
+    
+    
 }
     

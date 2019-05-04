@@ -44,4 +44,11 @@ public class Medio extends Jugador {
     public void setProm_asis(double prom_asis) {
         this.prom_asis = prom_asis;
     }
+
+    @Override
+    public String toString() {
+        return "Medio{" + "nivel_creat=" + nivel_creat + ", nivel_dom=" + nivel_dom + ", prom_asis=" + prom_asis + '}';
+    }
+    
+    
 }

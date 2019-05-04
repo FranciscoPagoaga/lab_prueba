@@ -62,6 +62,11 @@ public class Equipo {
     public void setJugador(ArrayList jugador) {
         this.jugador = jugador;
     }
+
+    @Override
+    public String toString() {
+        return "Equipo{" + "nombre=" + nombre + ", palmar=" + palmar + ", ciudad=" + ciudad + ", presupuesto=" + presupuesto + '}';
+    }
     
     
 }

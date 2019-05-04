@@ -22,7 +22,7 @@ public class Defensa extends Jugador {
         this.peso = peso;
         this.velocidad = velocidad;
     }
-
+  
     public void setNivel_agresividad(int nivel_agresividad) {
         this.nivel_agresividad = nivel_agresividad;
     }
@@ -53,6 +53,11 @@ public class Defensa extends Jugador {
 
     public String getVelocidad() {
         return velocidad;
+    }
+
+    @Override
+    public String toString() {
+        return "Defensa{" + "nivel_agresividad=" + nivel_agresividad + ", altura=" + altura + ", peso=" + peso + ", velocidad=" + velocidad + '}';
     }
     
     

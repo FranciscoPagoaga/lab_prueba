@@ -34,4 +34,11 @@ public class Portero extends Jugador {
     public void setNivel_pies(int nivel_pies) {
         this.nivel_pies = nivel_pies;
     }
+
+    @Override
+    public String toString() {
+        return "Portero{" + "nivel_aereo=" + nivel_aereo + ", nivel_pies=" + nivel_pies + '}';
+    }
+    
+    
 }

@@ -19,7 +19,7 @@ public class Jugador {
     private int numero;
     private double precio;
     private String equipo;
-
+    private String puesto=null;
     public Jugador() {
     }
 
@@ -35,6 +35,20 @@ public class Jugador {
         this.equipo = equipo;
     }
 
+    public String getPuesto() {
+        return puesto;
+    }
+
+    @Override
+    public String toString() {
+        return "Jugador{" + "nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", estado=" + estado + ", pais=" + pais + ", pie=" + pie + ", numero=" + numero + ", precio=" + precio + ", equipo=" + equipo + '}';
+    }
+
+    public void setPuesto(String puesto) {
+        this.puesto = puesto;
+    }
+    
+    
     public String getNombre() {
         return nombre;
     }

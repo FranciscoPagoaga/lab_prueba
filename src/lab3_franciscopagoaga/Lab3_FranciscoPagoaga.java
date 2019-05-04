@@ -648,7 +648,53 @@ public class Lab3_FranciscoPagoaga
                         }
                     }
                     break;
-                case 7: 
+                case 7:
+                    for (int i = 0; i < equipos.size(); i++) {
+                        System.out.println(i+") "+((Equipo)equipos.get(i)).getNombre());
+                    }
+                    opcion2=l.nextInt();
+                    int cont=0;
+                    for (int i = 0; i < ((Equipo)equipos.get(opcion2)).getJugador().size(); i++) {
+                        if (((Equipo)equipos.get(opcion2)).getJugador().get(i) instanceof Portero){
+                            cont++;
+                        }
+ 
+                    }
+                    if (((Equipo)equipos.get(opcion2)).getJugador().size()<11 || cont==0) {
+                        System.out.println("No tiene suficientes jugadores para su equipo");
+                    } else{
+                        for (int i = 0; i < 11; i++) {
+                            for (int j = 0; j <((Equipo)equipos.get(opcion2)).getJugador().size() ; j++) {
+                                System.out.println(j+") "+((Jugador)(((Equipo) equipos.get(opcion2)).getJugador().get(j))).getNombre());
+                            }
+                            int opcion4=l.nextInt();
+                            String x="Titular";
+                            ((Jugador)(((Equipo) equipos.get(opcion2)).getJugador().get(i))).setPuesto(x);
+                        }
+                    }
+                    break;
+                case 8:
+                    for (int i = 0; i < equipos.size(); i++) {
+                        System.out.println(i+") "+((Equipo) equipos.get(i)).toString());
+                        System.out.println("Titulares:");
+                        cont=1;
+                        for (int j = 0; j < ((Equipo) equipos.get(i)).getJugador().size(); j++) {
+                            if ( ((Jugador)(((Equipo) equipos.get(i)).getJugador().get(j))).getPuesto()=="Titular") {
+                                System.out.println(cont+") "+((Jugador)(((Equipo) equipos.get(i)).getJugador().get(j))).getNombre()+" "+((Jugador)(((Equipo) equipos.get(i)).getJugador().get(j))).getNombre());
+                            }
+                        }
+                        for (int j = 0; j < ((Equipo) equipos.get(i)).getJugador().size(); j++) {
+                            if ( ((Jugador)(((Equipo) equipos.get(i)).getJugador().get(j))).getPuesto()==null) {
+                                System.out.println(cont+") "+((Jugador)(((Equipo) equipos.get(i)).getJugador().get(j))).getNombre()+" "+((Jugador)(((Equipo) equipos.get(i)).getJugador().get(j))).getNombre());
+                            }
+                        }
+                    }
+                    break;
+                case 9:
+                    for (int i = 0; i < jugadores.size(); i++) {
+                        System.out.println(((Jugador)jugadores.get(i)).toString()+" ");
+                    }
+                    break;
             }
             System.out.println("1. Agregar jugador");
             System.out.println("2. Editar jugador");
