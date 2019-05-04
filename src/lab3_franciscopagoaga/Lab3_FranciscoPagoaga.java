@@ -683,6 +683,7 @@ public class Lab3_FranciscoPagoaga
                                 System.out.println(cont+") "+((Jugador)(((Equipo) equipos.get(i)).getJugador().get(j))).getNombre()+" "+((Jugador)(((Equipo) equipos.get(i)).getJugador().get(j))).getNombre());
                             }
                         }
+                        System.out.println("Suplentes: ");
                         for (int j = 0; j < ((Equipo) equipos.get(i)).getJugador().size(); j++) {
                             if ( ((Jugador)(((Equipo) equipos.get(i)).getJugador().get(j))).getPuesto()==null) {
                                 System.out.println(cont+") "+((Jugador)(((Equipo) equipos.get(i)).getJugador().get(j))).getNombre()+" "+((Jugador)(((Equipo) equipos.get(i)).getJugador().get(j))).getNombre());
@@ -691,8 +692,16 @@ public class Lab3_FranciscoPagoaga
                     }
                     break;
                 case 9:
+                    cont=1;
                     for (int i = 0; i < jugadores.size(); i++) {
-                        System.out.println(((Jugador)jugadores.get(i)).toString()+" ");
+                        System.out.println(cont+") "+((Jugador)jugadores.get(i)).toString()+"  ");
+                        cont++;
+                    }
+                    for (int i = 0; i < equipos.size(); i++) {
+                        for (int j = 0; j <  ((Equipo) equipos.get(i)).getJugador().size(); j++) {
+                            System.out.println(cont+") "+((Jugador)(((Equipo) equipos.get(i)).getJugador().get(j))).toString());
+                            cont++;
+                        }
                     }
                     break;
             }
